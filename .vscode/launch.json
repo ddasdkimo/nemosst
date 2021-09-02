@@ -1,0 +1,47 @@
+{
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "開始訓練",
+            "type": "python",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--traindatalist",
+                "dataset/traindatalist.json",
+                "--testdatalist",
+                "dataset/testdatalist.json",
+            ]
+        },
+        {
+            "name": "建立訓練清單",
+            "type": "python",
+            "request": "launch",
+            "program": "create_train_data.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--audiopath",
+                "dataset/audiofiles/",
+                "--textpath",
+                "dataset/txtfiles/",
+                "--traindatalist",
+                "dataset/traindatalist.json",
+                "--testdatalist",
+                "dataset/testdatalist.json",
+                "--testratio",
+                "0.2"
+            ]
+        },
+        {
+            "name": "測試模型轉換",
+            "type": "python",
+            "request": "launch",
+            "program": "test.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}
